@@ -50,7 +50,7 @@ Count the entries across every stream in the response. Loki has no completion si
 
 ## Read the window in slices
 
-Loki has no page cursor; a complete range is read with repeated range queries over smaller windows.
+Loki has no page cursor; a complete range is read with repeated range queries over smaller windows. Not documented: a slicing procedure. The steps below are derived from the documented entry limit and query length cap.
 - Cut the window into consecutive slices, each no longer than the query length cap and each starting where the previous one ended, and run the range query on each with the same query, limit and order.
 - Read the slices oldest first when the order is forward, and newest first when it is backward.
 - A slice that comes back full is cut in two and both halves are read again, in the same order. Never continue from a full page's last timestamp.

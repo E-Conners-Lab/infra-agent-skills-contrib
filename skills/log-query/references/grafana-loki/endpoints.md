@@ -2,7 +2,7 @@
 
 Sources: Grafana Loki 3.6 documentation, Grafana Loki HTTP API, Manage tenant isolation, and Grafana Loki configuration parameters (`limits_config` defaults) (retrieved 2026-11-02).
 
-Server address and credentials come from the existing client; Loki's API has no authentication of its own, so any login is handled in front of it. With `auth_enabled: true` (the default) every call carries `X-Scope-OrgID: <tenant>`. With `auth_enabled: false` the header is not needed and the single tenant is named `fake`.
+Server address and credentials come from the existing client; Not documented: any login for the API itself, so any login is whatever the existing client already uses. With `auth_enabled: true` (the default) every call carries `X-Scope-OrgID: <tenant>`. With `auth_enabled: false` the header is not needed and the single tenant is named `fake`.
 
 | Operation | Method and path | Notes |
 |---|---|---|
